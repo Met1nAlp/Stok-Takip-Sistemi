@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "EVRxAaYw6Uc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.WebApi\\StokTakip.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MetinAlp\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\MetinAlp\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
