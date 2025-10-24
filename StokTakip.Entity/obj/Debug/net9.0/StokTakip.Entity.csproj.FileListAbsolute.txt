@@ -1,0 +1,14 @@
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\bin\Debug\net9.0\StokTakip.Entity.deps.json
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\bin\Debug\net9.0\StokTakip.Entity.runtimeconfig.json
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\bin\Debug\net9.0\StokTakip.Entity.dll
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\bin\Debug\net9.0\StokTakip.Entity.pdb
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.AssemblyInfoInputs.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.AssemblyInfo.cs
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.csproj.CoreCompileInputs.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.sourcelink.json
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.dll
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\refint\StokTakip.Entity.dll
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.pdb
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\StokTakip.Entity.genruntimeconfig.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Entity\obj\Debug\net9.0\ref\StokTakip.Entity.dll

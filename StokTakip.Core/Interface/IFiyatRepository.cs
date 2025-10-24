@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Core.Interface
 {
-    public interface IFiyatRepository
+    public interface IFiyatRepository : IRepository<Fiyat>
     {
         Task<IEnumerable<Fiyat>> GetFiyatID(int fiyatID);
         Task<IEnumerable<Fiyat>> GetAlisFiyati(decimal alisFiyati);

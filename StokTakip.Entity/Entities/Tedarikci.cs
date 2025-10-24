@@ -10,8 +10,8 @@ namespace StokTakip.Entity.Entities
     {
         public int tedarikciID { get; set; }
         public string tedarikciAdi { get; set; }
-        public string telefon { get; set; }
-        public string email { get; set; }
+        public string yetkili { get; set; }
+        public string iletisim { get; set; }
         public string adres { get; set; }
 
         public ICollection<Urun> Urunler { get; set; }

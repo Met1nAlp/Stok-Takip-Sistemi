@@ -16,6 +16,9 @@ public class Urun
 
     public int kategoriID { get; set; }
     public int tedarikciID { get; set; }
+    public int fiyatID { get; set; }
+    public int stokID { get; set; }
+    public int satisID { get; set; }
 
     public virtual Kategori Kategori { get; set; }
     public virtual Tedarikci Tedarikci { get; set; }

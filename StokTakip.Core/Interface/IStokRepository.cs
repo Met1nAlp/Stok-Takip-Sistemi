@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Core.Interface
 {
-    public interface IStokRepository
+    public interface IStokRepository : IRepository<Stok>
     {
         Task<IEnumerable<Stok>> GetStokID(int stokID);
         Task<IEnumerable<Stok>> GetToplamStokMiktari(int toplamStokMiktari);

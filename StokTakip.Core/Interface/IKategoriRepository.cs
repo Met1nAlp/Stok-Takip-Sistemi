@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Core.Interface
 {
-    public interface IKategoriRepository
+    public interface IKategoriRepository : IRepository<Kategori>
     {
         Task<IEnumerable<Kategori>> GetKategoriID(int kategoriID);
         Task<IEnumerable<Kategori>> GetKategoriAdi(string kategoriAdi);

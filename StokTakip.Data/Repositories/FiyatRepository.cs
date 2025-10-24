@@ -1,32 +1,49 @@
-﻿using StokTakip.Core.Interface;
+﻿using Microsoft.EntityFrameworkCore;
+using StokTakip.Core.Interface;
+using StokTakip.Data.Context;
+using StokTakip.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StokTakip.Data.Repositories
 {
-    public class FiyatRepository<Fiyat> : IFiyatRepository where Fiyat : class
+    public class FiyatRepository : Repository<Fiyat>, IFiyatRepository
     {
-        public Task<IEnumerable<Entity.Entities.Fiyat>> GetAlisFiyati(decimal alisFiyati)
+        public FiyatRepository(StokTakipDbContext context) : base(context)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Entity.Entities.Fiyat>> GetFiyatID(int fiyatID)
+        public async Task<IEnumerable<Fiyat>> GetFiyatID(int fiyatID)
         {
-            throw new NotImplementedException();
+            var fiyat = await _context.FiyatTable.FindAsync(fiyatID);
+            if (fiyat == null)
+            {
+                return new List<Fiyat>();
+            }
+            return new List<Fiyat> { fiyat };
         }
 
-        public Task<IEnumerable<Entity.Entities.Fiyat>> GetGuncellemeTarihi(DateTime guncellemeTarihi)
+        public async Task<IEnumerable<Fiyat>> GetAlisFiyati(decimal alisFiyati)
         {
-            throw new NotImplementedException();
+            return await _context.FiyatTable
+                                 .Where(f => f.alisFiyati == alisFiyati)
+                                 .ToListAsync();
         }
 
-        public Task<IEnumerable<Entity.Entities.Fiyat>> GetSatisFiyati(decimal satisFiyati)
+        public async Task<IEnumerable<Fiyat>> GetSatisFiyati(decimal satisFiyati)
         {
-            throw new NotImplementedException();
+            return await _context.FiyatTable
+                                 .Where(f => f.satisFiyati == satisFiyati)
+                                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Fiyat>> GetGuncellemeTarihi(DateTime guncellemeTarihi)
+        {
+            return await _context.FiyatTable
+                                 .Where(f => f.guncellemeTarihi.Date == guncellemeTarihi.Date)
+                                 .ToListAsync();
         }
     }
 }

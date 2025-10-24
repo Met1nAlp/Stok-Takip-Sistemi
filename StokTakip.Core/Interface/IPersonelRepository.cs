@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Core.Interface
 {
-    public interface IPersonelRepository
+    public interface IPersonelRepository : IRepository<Personel>
     {
         Task<IEnumerable<Personel>> GetPersonelID(int personelID);
         Task<IEnumerable<Personel>> GetPersonelAdi(string personelAdi);
-        Task<IEnumerable<Personel>> GetPersonelNo(string personelNo);
+        Task<IEnumerable<Personel>> GetPersonelNo(int personelNo);
         Task<IEnumerable<Personel>> GetUnvani(string unvani);
         Task<IEnumerable<Personel>> GetIletisim(string iletisim);
         Task<IEnumerable<Personel>> GetIseBaslamaTarihi(DateTime iseBaslamaTarihi);

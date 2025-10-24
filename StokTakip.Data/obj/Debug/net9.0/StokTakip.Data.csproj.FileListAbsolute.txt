@@ -1,0 +1,6 @@
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.csproj.AssemblyReference.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.AssemblyInfoInputs.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.AssemblyInfo.cs
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.csproj.CoreCompileInputs.cache
+C:\Users\MetinAlp\.net\StokTakipSistemi\StokTakip.Data\obj\Debug\net9.0\StokTakip.Data.sourcelink.json

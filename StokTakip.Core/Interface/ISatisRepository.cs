@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Core.Interface
 {
-    public interface ISatisRepository
+    public interface ISatisRepository : IRepository<Satis>
     {
         Task<IEnumerable<Satis>> GetSatisID(int satisID);
         Task<IEnumerable<Satis>> GetUrunlerinAdiFiyati(string urunlerinAdiFiyati);

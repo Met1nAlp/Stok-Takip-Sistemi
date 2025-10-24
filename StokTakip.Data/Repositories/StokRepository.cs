@@ -5,29 +5,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StokTakip.Data.Context;
 
 namespace StokTakip.Data.Repositories
 {
-    public class StokRepository<Stok> : IStokRepository where Stok : class
+    public class StokRepository : Repository<Stok>, IStokRepository
     {
-        public Task<IEnumerable<Entity.Entities.Stok>> GetIslemTarihi(DateTime islemTarihi)
+        public StokRepository(StokTakipDbContext context) : base(context)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Entity.Entities.Stok>> GetKalanStokMiktari(int kalanStokMiktari)
+        public async Task<IEnumerable<Stok>> GetStokID(int stokID)
         {
-            throw new NotImplementedException();
+            var stok = await _context.StokTable.FindAsync(stokID);
+            if (stok == null)
+            {
+                return new List<Stok>();
+            }
+            return new List<Stok> { stok };
         }
 
-        public Task<IEnumerable<Entity.Entities.Stok>> GetStokID(int stokID)
+        public async Task<IEnumerable<Stok>> GetIslemTarihi(DateTime islemTarihi)
         {
-            throw new NotImplementedException();
+            return _context.StokTable.Where(s => s.islemTarihi == islemTarihi);
         }
 
-        public Task<IEnumerable<Entity.Entities.Stok>> GetToplamStokMiktari(int toplamStokMiktari)
+        public async Task<IEnumerable<Stok>> GetKalanStokMiktari(int kalanStokMiktari)
         {
-            throw new NotImplementedException();
+            return _context.StokTable.Where(s => s.kalanStokMiktari == kalanStokMiktari);
+        }    
+
+        public async Task<IEnumerable<Stok>> GetToplamStokMiktari(int toplamStokMiktari)
+        {
+            return _context.StokTable.Where(s => s.toplamStokMiktari == toplamStokMiktari);
         }
     }
 }
