@@ -1,11 +1,12 @@
-﻿using StokTakip.Entity.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using StokTakip.Core.Interface;
+using StokTakip.Data.Context;
+using StokTakip.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StokTakip.Data.Context;
 
 namespace StokTakip.Data.Repositories
 {
@@ -15,29 +16,11 @@ namespace StokTakip.Data.Repositories
         {
         }
 
-        public async Task<IEnumerable<Stok>> GetStokID(int stokID)
+        public async Task<Stok> GetStokByIdAsync(int stokId)
         {
-            var stok = await _context.StokTable.FindAsync(stokID);
-            if (stok == null)
-            {
-                return new List<Stok>();
-            }
-            return new List<Stok> { stok };
-        }
-
-        public async Task<IEnumerable<Stok>> GetIslemTarihi(DateTime islemTarihi)
-        {
-            return _context.StokTable.Where(s => s.islemTarihi == islemTarihi);
-        }
-
-        public async Task<IEnumerable<Stok>> GetKalanStokMiktari(int kalanStokMiktari)
-        {
-            return _context.StokTable.Where(s => s.kalanStokMiktari == kalanStokMiktari);
-        }    
-
-        public async Task<IEnumerable<Stok>> GetToplamStokMiktari(int toplamStokMiktari)
-        {
-            return _context.StokTable.Where(s => s.toplamStokMiktari == toplamStokMiktari);
+            return await _context.StokTable
+                .Include(s => s.Urun)
+                .SingleOrDefaultAsync(s => s.stokID == stokId);
         }
     }
 }

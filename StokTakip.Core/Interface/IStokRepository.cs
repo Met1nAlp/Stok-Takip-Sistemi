@@ -9,9 +9,6 @@ namespace StokTakip.Core.Interface
 {
     public interface IStokRepository : IRepository<Stok>
     {
-        Task<IEnumerable<Stok>> GetStokID(int stokID);
-        Task<IEnumerable<Stok>> GetToplamStokMiktari(int toplamStokMiktari);
-        Task<IEnumerable<Stok>> GetKalanStokMiktari(int kalanStokMiktari);
-        Task<IEnumerable<Stok>> GetIslemTarihi(DateTime islemTarihi);
+        Task<Stok> GetStokByIdAsync(int stokId);
     }
 }

@@ -9,14 +9,7 @@ namespace StokTakip.Core.Interface
 {
     public interface ISatisRepository : IRepository<Satis>
     {
-        Task<IEnumerable<Satis>> GetSatisID(int satisID);
-        Task<IEnumerable<Satis>> GetUrunlerinAdiFiyati(string urunlerinAdiFiyati);
-        Task<IEnumerable<Satis>> GetAraToplam(decimal araToplam);
-        Task<IEnumerable<Satis>> GetVergiTutarlari(decimal vergiTutarlari);
-        Task<IEnumerable<Satis>> GetToplamTutar(decimal toplamTutar);
-        Task<IEnumerable<Satis>> GetOdemeTipi(string odemeTipi);
-        Task<IEnumerable<Satis>> GetIslemTarihi(DateTime islemTarihi);
-        Task<IEnumerable<Satis>> GetMusteriID(int musteriID);
-        Task<IEnumerable<Satis>> GetPersonelID(int personelID);
+        Task<Satis> GetSatisDetayByIdAsync(int satisId);
+        Task<IEnumerable<Satis>> GetTumSatisAsync();
     }
 }

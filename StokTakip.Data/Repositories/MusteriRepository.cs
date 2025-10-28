@@ -14,35 +14,12 @@ namespace StokTakip.Data.Repositories
         public MusteriRepository(StokTakip.Data.Context.StokTakipDbContext context) : base(context)
         {
         }
-        public async Task<IEnumerable<Musteri>> GetIletisim(string iletisim)
+
+        public Task<Musteri> GetMusteriByIdAsync(int musteriId)
         {
-            return await _context.MusteriTable
-                .Where(m => m.iletisim.Contains(iletisim))
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<Musteri>> GetKayitTarihi(DateTime kayitTarihi)
-        {
-            return await _context.MusteriTable
-                .Where(m => m.kayitTarihi == kayitTarihi)
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<Musteri>> GetMusteriAdi(string musteriAdi)
-        {
-            return await _context.MusteriTable
-                .Where(m => m.musteriAdi.Contains(musteriAdi))
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<Musteri>> GetMusteriID(int musteriID)
-        {
-            return await _context.MusteriTable
-                .Where(m => m.musteriID == musteriID)
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<Musteri>> GetMusteriNo(int musteriNo)
-        {
-            return await _context.MusteriTable
-                .Where(m => m.musteriNo == musteriNo)
-                .ToListAsync();
+            return _context.MusteriTable
+                .Include(m => m.SatisTable)
+                .SingleOrDefaultAsync(m => m.musteriID== musteriId);
         }
     }
 }

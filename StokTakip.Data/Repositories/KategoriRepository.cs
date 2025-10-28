@@ -15,26 +15,11 @@ namespace StokTakip.Data.Repositories
         public KategoriRepository(StokTakipDbContext context) : base(context)
         {
         }
-        public async Task<IEnumerable<Kategori>> GetKategoriID(int kategoriID)
-        {
-            var kategori = await _context.KategoriTable.FindAsync(kategoriID);
-            if (kategori == null)
-            {
-                return new List<Kategori>();
-            }
-            return new List<Kategori> { kategori };
-        }
-        public async Task<IEnumerable<Kategori>> GetKategoriAdi(string kategoriAdi)
-        {
-            return await _context.KategoriTable   
-                .Where(k => k.kategoriAdi == kategoriAdi)
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<Kategori>> GetYeri(string yeri)
+        public async Task<Kategori> GetKategoriByIdAsync(int kategoriId)
         {
             return await _context.KategoriTable
-                .Where(k => k.yeri == yeri)
-                .ToListAsync();
+                .Include(k => k.Urunler)
+                .SingleOrDefaultAsync(k => k.kategoriID == kategoriId);
         }
     }
 }

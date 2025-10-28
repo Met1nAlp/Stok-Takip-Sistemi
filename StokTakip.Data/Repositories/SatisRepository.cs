@@ -16,62 +16,20 @@ namespace StokTakip.Data.Repositories
         {
         }
 
-        public async Task<IEnumerable<Satis>> GetAraToplam(decimal araToplam)
+        public Task<Satis> GetSatisDetayByIdAsync(int satisId)
         {
             return _context.SatisTable
-                .Where(s => s.araToplam == araToplam);
+                .Include(s => s.Musteri)
+                .Include(s => s.Personel)
+                .FirstOrDefaultAsync(s => s.satisID== satisId);
         }
 
-        public async Task<IEnumerable<Satis>> GetIslemTarihi(DateTime islemTarihi)
+        public async Task<IEnumerable<Satis>> GetTumSatisAsync()
         {
-            return _context.SatisTable
-                .Where(s => s.islemTarihi == islemTarihi);
-        }
-
-        public async Task<IEnumerable<Satis>> GetMusteriID(int musteriID)
-        {
-            return _context.SatisTable
-                .Where(s => s.musteriID == musteriID);
-        }
-
-        public async Task<IEnumerable<Satis>> GetOdemeTipi(string odemeTipi)
-        {
-            return _context.SatisTable
-                .Where(s => s.odemeTipi == odemeTipi);
-        }
-
-        public async Task<IEnumerable<Satis>> GetPersonelID(int personelID)
-        {
-            return _context.SatisTable
-                .Where(s => s.personelID == personelID);
-        }
-
-        public async Task<IEnumerable<Satis>> GetSatisID(int satisID)
-        {
-            var satis = await _context.SatisTable.FindAsync(satisID);
-            if (satis == null)
-            {
-                return new List<Satis>();
-            }
-            return new List<Satis> { satis };
-        }
-
-        public async Task<IEnumerable<Satis>> GetToplamTutar(decimal toplamTutar)
-        {
-            return _context.SatisTable
-                .Where(s => s.toplamTutar == toplamTutar);
-        }
-
-        public async Task<IEnumerable<Satis>> GetUrunlerinAdiFiyati(string urunlerinAdiFiyati)
-        {
-            return _context.SatisTable
-                .Where(s => s.urunlerinAdiFiyati == urunlerinAdiFiyati);
-        }
-
-        public async Task<IEnumerable<Satis>> GetVergiTutarlari(decimal vergiTutarlari)
-        {
-            return _context.SatisTable
-                .Where(s => s.vergiTutarlari == vergiTutarlari);
+            return await _context.SatisTable
+                .Include(s => s.Musteri)
+                .Include(s => s.Personel)
+                .ToListAsync();
         }
     }
 }

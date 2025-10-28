@@ -9,8 +9,6 @@ namespace StokTakip.Core.Interface
 {
     public interface IKategoriRepository : IRepository<Kategori>
     {
-        Task<IEnumerable<Kategori>> GetKategoriID(int kategoriID);
-        Task<IEnumerable<Kategori>> GetKategoriAdi(string kategoriAdi);
-        Task<IEnumerable<Kategori>> GetYeri(string yeri);
+        Task<Kategori> GetKategoriByIdAsync(int kategoriId);
     }
 }

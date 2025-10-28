@@ -4,6 +4,7 @@ using StokTakip.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +47,15 @@ namespace StokTakip.Data.Repositories
         {
             _dbSet.Update(entity);
             return Task.CompletedTask;
+        }
+
+        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
+        }
+        public async Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.SingleOrDefaultAsync(predicate);
         }
     }
 }

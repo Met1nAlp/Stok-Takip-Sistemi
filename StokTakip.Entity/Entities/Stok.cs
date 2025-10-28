@@ -13,6 +13,6 @@ namespace StokTakip.Entity.Entities
         public int kalanStokMiktari { get; set; }
         public DateTime islemTarihi { get; set; }
 
-        public virtual Urun Urun { get; set; }
+        public int urunID { get; set; }
     }
 }

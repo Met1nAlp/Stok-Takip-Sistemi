@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.data\\repositories\\personelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|solutionrelative:stoktakip.data\\repositories\\personelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\iurunrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\iurunrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AC9BD27-54BE-CFDF-990D-6F29655C6B34}|StokTakip.Entity\\StokTakip.Entity.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.entity\\entities\\personel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0AC9BD27-54BE-CFDF-990D-6F29655C6B34}|StokTakip.Entity\\StokTakip.Entity.csproj|solutionrelative:stoktakip.entity\\entities\\personel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\itedarikcirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\itedarikcirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AC9BD27-54BE-CFDF-990D-6F29655C6B34}|StokTakip.Entity\\StokTakip.Entity.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.entity\\entities\\kategori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0AC9BD27-54BE-CFDF-990D-6F29655C6B34}|StokTakip.Entity\\StokTakip.Entity.csproj|solutionrelative:stoktakip.entity\\entities\\kategori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\istokrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\istokrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.data\\repositories\\kategorirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|solutionrelative:stoktakip.data\\repositories\\kategorirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\isatisrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\isatisrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.data\\repositories\\fiyatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|solutionrelative:stoktakip.data\\repositories\\fiyatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.data\\repositories\\musterirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95BC8FC-4D8D-233B-0D35-3C72000B0F45}|StokTakip.Data\\StokTakip.Data.csproj|solutionrelative:stoktakip.data\\repositories\\musterirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\ipersonelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\ipersonelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\imusterirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\imusterirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\ikategorirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\ikategorirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\interface\\ifiyatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\interface\\ifiyatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,85 +51,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PersonelRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\PersonelRepository.cs",
-              "RelativeDocumentMoniker": "StokTakip.Data\\Repositories\\PersonelRepository.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\PersonelRepository.cs",
-              "RelativeToolTip": "StokTakip.Data\\Repositories\\PersonelRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAuwCQAAAA3AAAAAAAAAA==",
+              "Title": "IUrunRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IUrunRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IUrunRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IUrunRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IUrunRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T09:19:47.07Z",
+              "WhenOpened": "2025-10-28T08:44:14.191Z",
               "EditorCaption": ""
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FiyatRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\FiyatRepository.cs",
-              "RelativeDocumentMoniker": "StokTakip.Data\\Repositories\\FiyatRepository.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\FiyatRepository.cs",
-              "RelativeToolTip": "StokTakip.Data\\Repositories\\FiyatRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T13:37:22.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "KategoriRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\KategoriRepository.cs",
-              "RelativeDocumentMoniker": "StokTakip.Data\\Repositories\\KategoriRepository.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\KategoriRepository.cs",
-              "RelativeToolTip": "StokTakip.Data\\Repositories\\KategoriRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:35:31.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MusteriRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\MusteriRepository.cs",
-              "RelativeDocumentMoniker": "StokTakip.Data\\Repositories\\MusteriRepository.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\Repositories\\MusteriRepository.cs",
-              "RelativeToolTip": "StokTakip.Data\\Repositories\\MusteriRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:35:41.208Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Personel.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\Entities\\Personel.cs",
-              "RelativeDocumentMoniker": "StokTakip.Entity\\Entities\\Personel.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\Entities\\Personel.cs",
-              "RelativeToolTip": "StokTakip.Entity\\Entities\\Personel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Title": "ITedarikciRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\ITedarikciRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\ITedarikciRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\ITedarikciRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\ITedarikciRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T09:20:59.937Z",
+              "WhenOpened": "2025-10-28T08:44:09.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Kategori.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\Entities\\Kategori.cs",
-              "RelativeDocumentMoniker": "StokTakip.Entity\\Entities\\Kategori.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\Entities\\Kategori.cs",
-              "RelativeToolTip": "StokTakip.Entity\\Entities\\Kategori.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IStokRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IStokRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IStokRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IStokRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IStokRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T09:24:25.181Z",
+              "WhenOpened": "2025-10-28T08:44:06.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISatisRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\ISatisRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\ISatisRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\ISatisRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\ISatisRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T08:43:59.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPersonelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IPersonelRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IPersonelRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IPersonelRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IPersonelRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T08:43:27.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMusteriRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IMusteriRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IMusteriRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IMusteriRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IMusteriRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T08:43:21.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IKategoriRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IKategoriRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IKategoriRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IKategoriRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IKategoriRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T08:43:17.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IFiyatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IFiyatRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IFiyatRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IFiyatRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IFiyatRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T08:43:11.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IRepository.cs",
+              "RelativeDocumentMoniker": "StokTakip.Core\\Interface\\IRepository.cs",
+              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\Interface\\IRepository.cs",
+              "RelativeToolTip": "StokTakip.Core\\Interface\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T07:56:42.081Z",
               "EditorCaption": ""
             }
           ]

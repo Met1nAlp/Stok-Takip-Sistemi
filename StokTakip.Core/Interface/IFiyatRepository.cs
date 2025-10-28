@@ -9,10 +9,6 @@ namespace StokTakip.Core.Interface
 {
     public interface IFiyatRepository : IRepository<Fiyat>
     {
-        Task<IEnumerable<Fiyat>> GetFiyatID(int fiyatID);
-        Task<IEnumerable<Fiyat>> GetAlisFiyati(decimal alisFiyati);
-        Task<IEnumerable<Fiyat>> GetSatisFiyati(decimal satisFiyati);
-        Task<IEnumerable<Fiyat>> GetGuncellemeTarihi(DateTime guncellemeTarihi);
-
+        Task<Fiyat> GetFiyatDetayByIdAsync(int fiyatId);
     }
 }

@@ -15,35 +15,13 @@ namespace StokTakip.Data.Repositories
         {
         }
 
-        public async Task<IEnumerable<Fiyat>> GetFiyatID(int fiyatID)
-        {
-            var fiyat = await _context.FiyatTable.FindAsync(fiyatID);
-            if (fiyat == null)
-            {
-                return new List<Fiyat>();
-            }
-            return new List<Fiyat> { fiyat };
-        }
-
-        public async Task<IEnumerable<Fiyat>> GetAlisFiyati(decimal alisFiyati)
+        public async Task<Fiyat> GetFiyatDetayByIdAsync(int fiyatId)
         {
             return await _context.FiyatTable
-                                 .Where(f => f.alisFiyati == alisFiyati)
-                                 .ToListAsync();
+                .Include(f => f.UrunTable)
+                .SingleOrDefaultAsync(f => f.fiyatID == fiyatId);
         }
 
-        public async Task<IEnumerable<Fiyat>> GetSatisFiyati(decimal satisFiyati)
-        {
-            return await _context.FiyatTable
-                                 .Where(f => f.satisFiyati == satisFiyati)
-                                 .ToListAsync();
-        }
-
-        public async Task<IEnumerable<Fiyat>> GetGuncellemeTarihi(DateTime guncellemeTarihi)
-        {
-            return await _context.FiyatTable
-                                 .Where(f => f.guncellemeTarihi.Date == guncellemeTarihi.Date)
-                                 .ToListAsync();
-        }
+       
     }
 }
