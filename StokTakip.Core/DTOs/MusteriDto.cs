@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StokTakip.Service.DTOs
+namespace StokTakip.Core.DTOs
 {
     public class MusteriDto
     {
@@ -17,7 +17,7 @@ namespace StokTakip.Service.DTOs
     }
 }
 
-namespace StokTakip.Service.DTOs
+namespace StokTakip.Core.DTOs
 {
     public class MusteriEkleDto
     {
@@ -30,7 +30,7 @@ namespace StokTakip.Service.DTOs
     }
 }
 
-namespace StokTakip.Service.DTOs
+namespace StokTakip.Core.DTOs
 {
     public class MusteriGuncelleDto
     {
@@ -45,7 +45,7 @@ namespace StokTakip.Service.DTOs
     }
 }
 
-namespace StokTakip.Service.DTOs
+namespace StokTakip.Core.DTOs
 {
     public class MusteriDetayDto
     {
