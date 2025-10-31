@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StokTakip.Core.Interface
+namespace StokTakip.Core.IRepositories
 {
-    public interface IMusteriRepository : IRepository<Musteri>
+    public interface IFiyatRepository : IRepository<Fiyat>
     {
-        Task<Musteri> GetMusteriByIdAsync(int musteriId);
+        Task<Fiyat> GetFiyatDetayByIdAsync(int fiyatId);
     }
 }

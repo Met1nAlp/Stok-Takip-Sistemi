@@ -9,42 +9,33 @@ namespace StokTakip.Core.DTOs
 {
     public class KategoriDto
     {
-        public int kategoriID { get; set; }
-        public string kategoriAdi { get; set; }
-        public string yeri { get; set; }
+        public int KategoriID { get; set; }
+        public string KategoriAdi { get; set; }
+        public string Yeri { get; set; }
     }
-}
 
-namespace StokTakip.Core.DTOs
-{
-    public class kategoriEkleDto
+    public class KategoriEkleDto
     {
         [Required(ErrorMessage = "Kategori Adı boş geçilemez!")]
-        public string kategoriAdi { get; set; }
-        [Required(ErrorMessage = "Kategori Yeri boş geçilemez!")]
-        public string yeri { get; set; }
-    }
-}
+        public string KategoriAdi { get; set; }
 
-namespace StokTakip.Core.DTOs
-{
-    public class kategoriGuncelleDto
+        [Required(ErrorMessage = "Kategori Yeri boş geçilemez!")]
+        public string Yeri { get; set; }
+    }
+
+    public class KategoriGuncelleDto
     {
-        [Required(ErrorMessage = "Kategori ID boş geçilemez!")]
-        public int kategoriID { get; set; }
         [Required(ErrorMessage = "Kategori Adı boş geçilemez!")]
-        public string kategoriAdi { get; set; }
-        [Required(ErrorMessage = "Kategori Yeri boş geçilemez!")]
-        public string yeri { get; set; }
-    }
-}
+        public string KategoriAdi { get; set; }
 
-namespace StokTakip.Core.DTOs
-{
-    public class kategoriDetayDto
+        [Required(ErrorMessage = "Kategori Yeri boş geçilemez!")]
+        public string Yeri { get; set; }
+    }
+
+    public class KategoriDetayDto
     {
-        public int kategoriID { get; set; }
-        public string kategoriAdi { get; set; }
-        public string yeri { get; set}
+        public int KategoriID { get; set; }
+        public string KategoriAdi { get; set; }
+        public string Yeri { get; set; }
     }
 }

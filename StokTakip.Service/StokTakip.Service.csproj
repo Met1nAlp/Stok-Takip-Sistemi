@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StokTakip.Core\StokTakip.Core.csproj" />
+    <ProjectReference Include="..\StokTakip.Data\StokTakip.Data.csproj" />
+    <ProjectReference Include="..\StokTakip.Entity\StokTakip.Entity.csproj" />
+  </ItemGroup>
+
 </Project>

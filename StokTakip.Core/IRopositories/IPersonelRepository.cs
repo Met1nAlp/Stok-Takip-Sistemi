@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StokTakip.Core.Interface
+namespace StokTakip.Core.IRepositories
 {
-    public interface IStokRepository : IRepository<Stok>
+    public interface IPersonelRepository : IRepository<Personel>
     {
-        Task<Stok> GetStokByIdAsync(int stokId);
+        Task<Personel> GetPersonelByIdAsync(int personelId);
     }
 }

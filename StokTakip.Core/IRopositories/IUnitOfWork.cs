@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace StokTakip.Core.Interface
+namespace StokTakip.Core.IRepositories
 {
     public interface IUnitOfWork : IDisposable
     {
