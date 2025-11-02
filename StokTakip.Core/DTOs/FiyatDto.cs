@@ -25,6 +25,8 @@ namespace StokTakip.Core.DTOs
     }
     public class FiyatGuncelleDto
     {
+        [Required(ErrorMessage = "FiyatId girmek zorunludur.")]
+        public int fiyatID { get; set; }
         [Required(ErrorMessage = "Alış fiyatı girmek zorunludur.")]
         public decimal AlisFiyati { get; set; }
 

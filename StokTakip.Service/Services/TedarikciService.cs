@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.DTOs;
+﻿using StokTakip.Core.DTOs;
+using StokTakip.Core.IRepositories;
 using StokTakip.Core.IServices;
-using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +10,30 @@ namespace StokTakip.Service.Services
 {
     public class TedarikciService : ITedarikciService
     {
-        private readonly StokTakipDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public TedarikciService(StokTakipDbContext context)
+        public TedarikciService(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<List<TedarikciDto>> GetAllAsync()
         {
-            return await _context.TedarikciTable
-                .Select(t => new TedarikciDto
-                {
-                    tedarikciID = t.tedarikciID,
-                    tedarikciAdi = t.tedarikciAdi,
-                    yetkili = t.yetkili,
-                    iletisim = t.iletisim,
-                    adres = t.adres
-                }).ToListAsync();
+            var tedarikciler = await _unitOfWork.Tedarikciler.GetAllAsync();
+
+            return tedarikciler.Select(t => new TedarikciDto
+            {
+                tedarikciID = t.tedarikciID,
+                tedarikciAdi = t.tedarikciAdi,
+                yetkili = t.yetkili,
+                iletisim = t.iletisim,
+                adres = t.adres
+            }).ToList();
         }
 
         public async Task<TedarikciDto> GetByIdAsync(int tedarikciId)
         {
-            var tedarikci = await _context.TedarikciTable.FindAsync(tedarikciId);
+            var tedarikci = await _unitOfWork.Tedarikciler.GetByIdAsync(tedarikciId);
             if (tedarikci == null) return null;
 
             return new TedarikciDto
@@ -48,9 +48,7 @@ namespace StokTakip.Service.Services
 
         public async Task<TedarikciDetayDto> GetDetayByIdAsync(int tedarikciId)
         {
-            var tedarikci = await _context.TedarikciTable
-                                .Include(t => t.Urunler)
-                                .FirstOrDefaultAsync(t => t.tedarikciID == tedarikciId);
+            var tedarikci = await _unitOfWork.Tedarikciler.GetTedarikciByIdAsync(tedarikciId);
 
             if (tedarikci == null) return null;
 
@@ -80,15 +78,15 @@ namespace StokTakip.Service.Services
                 adres = tedarikciEkleDto.adres
             };
 
-            _context.TedarikciTable.Add(tedarikci);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Tedarikciler.AddAsync(tedarikci);
+            await _unitOfWork.SaveChangesAsync();
 
             return await GetByIdAsync(tedarikci.tedarikciID);
         }
 
         public async Task<TedarikciDto> UpdateAsync(int tedarikciId, TedarikciGuncelleDto tedarikciGuncelleDto)
         {
-            var tedarikci = await _context.TedarikciTable.FindAsync(tedarikciId);
+            var tedarikci = await _unitOfWork.Tedarikciler.GetByIdAsync(tedarikciId);
             if (tedarikci == null) return null;
 
             tedarikci.tedarikciAdi = tedarikciGuncelleDto.tedarikciAdi;
@@ -96,17 +94,18 @@ namespace StokTakip.Service.Services
             tedarikci.iletisim = tedarikciGuncelleDto.iletisim;
             tedarikci.adres = tedarikciGuncelleDto.adres;
 
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Tedarikciler.UpdateAsync(tedarikci);
+            await _unitOfWork.SaveChangesAsync();
             return await GetByIdAsync(tedarikci.tedarikciID);
         }
 
         public async Task<bool> DeleteAsync(int tedarikciId)
         {
-            var tedarikci = await _context.TedarikciTable.FindAsync(tedarikciId);
+            var tedarikci = await _unitOfWork.Tedarikciler.GetByIdAsync(tedarikciId);
             if (tedarikci == null) return false;
 
-            _context.TedarikciTable.Remove(tedarikci);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Tedarikciler.DeleteAsync(tedarikci);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
     }

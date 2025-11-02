@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.Interface;
+using StokTakip.Core.IRepositories;
 using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System;

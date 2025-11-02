@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Entity.Entities
 {
-    public class Stok
+    public class SatisDetay
     {
-        public int stokID { get; set; }
-        public int toplamStokMiktari { get; set; }
-        public int kalanStokMiktari { get; set; }
-        public DateTime islemTarihi { get; set; }
+        public int satisID { get; set; }
+        public virtual Satis Satis { get; set; }
 
         public int urunID { get; set; }
         public virtual Urun Urun { get; set; }
+
+        public int Miktar { get; set; }
+        public decimal SatisFiyati { get; set; }
     }
 }

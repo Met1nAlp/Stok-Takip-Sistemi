@@ -9,7 +9,6 @@ namespace StokTakip.Entity.Entities
     public class Satis
     {
         public int satisID { get; set; }
-        public string urunlerinAdiFiyati { get; set; }
         public decimal araToplam { get; set; }
         public decimal vergiTutarlari { get; set; }
         public decimal toplamTutar { get; set; }
@@ -20,5 +19,6 @@ namespace StokTakip.Entity.Entities
 
         public virtual Musteri Musteri { get; set; }
         public virtual Personel Personel { get; set; }
+        public virtual ICollection<SatisDetay> SatisDetaylari { get; set; }
     }
 }

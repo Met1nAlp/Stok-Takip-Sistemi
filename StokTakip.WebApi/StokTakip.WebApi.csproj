@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StokTakip.Core\StokTakip.Core.csproj" />
+    <ProjectReference Include="..\StokTakip.Data\StokTakip.Data.csproj" />
+    <ProjectReference Include="..\StokTakip.Entity\StokTakip.Entity.csproj" />
+    <ProjectReference Include="..\StokTakip.Service\StokTakip.Service.csproj" />
+  </ItemGroup>
+
 </Project>

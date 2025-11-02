@@ -19,12 +19,11 @@ namespace StokTakip.Entity.Entities
         public int kategoriID { get; set; }
         public int tedarikciID { get; set; }
         public int fiyatID { get; set; }
-        public int stokID { get; set; }
-        public int satisID { get; set; }
 
         public virtual Kategori Kategori { get; set; }
         public virtual Tedarikci Tedarikci { get; set; }
         public virtual Fiyat Fiyat { get; set; }
-        public virtual Satis Satis { get; set; }
+        public virtual Stok Stok { get; set; }
+        public virtual ICollection<SatisDetay> SatisDetaylari { get; set; } 
     }
 }

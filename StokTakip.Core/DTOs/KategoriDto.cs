@@ -25,6 +25,8 @@ namespace StokTakip.Core.DTOs
 
     public class KategoriGuncelleDto
     {
+        [Required(ErrorMessage = "KategoriId boş geçilemez!")]
+        public int kategoriID { get; set; }
         [Required(ErrorMessage = "Kategori Adı boş geçilemez!")]
         public string KategoriAdi { get; set; }
 

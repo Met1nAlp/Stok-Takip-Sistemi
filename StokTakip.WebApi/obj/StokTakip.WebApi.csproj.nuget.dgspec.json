@@ -4,6 +4,317 @@
     "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.WebApi\\StokTakip.WebApi.csproj": {}
   },
   "projects": {
+    "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj",
+        "projectName": "StokTakip.Core",
+        "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj",
+        "packagesPath": "C:\\Users\\MetinAlp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MetinAlp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj",
+        "projectName": "StokTakip.Data",
+        "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj",
+        "packagesPath": "C:\\Users\\MetinAlp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MetinAlp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj",
+        "projectName": "StokTakip.Entity",
+        "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj",
+        "packagesPath": "C:\\Users\\MetinAlp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MetinAlp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\StokTakip.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\StokTakip.Service.csproj",
+        "projectName": "StokTakip.Service",
+        "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\StokTakip.Service.csproj",
+        "packagesPath": "C:\\Users\\MetinAlp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MetinAlp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.WebApi\\StokTakip.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +342,20 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\StokTakip.Core.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Data\\StokTakip.Data.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Entity\\StokTakip.Entity.csproj"
+              },
+              "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\StokTakip.Service.csproj": {
+                "projectPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\StokTakip.Service.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

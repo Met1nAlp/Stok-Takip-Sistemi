@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E684AC8A-CD3C-BF9E-32EE-F27413E3F230}|StokTakip.Service\\StokTakip.Service.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.service\\services\\urunservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E684AC8A-CD3C-BF9E-32EE-F27413E3F230}|StokTakip.Service\\StokTakip.Service.csproj|solutionrelative:stoktakip.service\\services\\urunservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\iservices\\iurunservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\iservices\\iurunservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E684AC8A-CD3C-BF9E-32EE-F27413E3F230}|StokTakip.Service\\StokTakip.Service.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.service\\services\\satisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E684AC8A-CD3C-BF9E-32EE-F27413E3F230}|StokTakip.Service\\StokTakip.Service.csproj|solutionrelative:stoktakip.service\\services\\satisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|c:\\users\\metinalp\\.net\\stoktakipsistemi\\stoktakip.core\\iservices\\isatisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F728CF0-D095-F4DC-6821-C1DA677F1847}|StokTakip.Core\\StokTakip.Core.csproj|solutionrelative:stoktakip.core\\iservices\\isatisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UrunService.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\Services\\UrunService.cs",
-              "RelativeDocumentMoniker": "StokTakip.Service\\Services\\UrunService.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\Services\\UrunService.cs",
-              "RelativeToolTip": "StokTakip.Service\\Services\\UrunService.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAkwGkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:37:57.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IUrunService.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\IServices\\IUrunService.cs",
-              "RelativeDocumentMoniker": "StokTakip.Core\\IServices\\IUrunService.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\IServices\\IUrunService.cs",
-              "RelativeToolTip": "StokTakip.Core\\IServices\\IUrunService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:37:26.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SatisService.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\Services\\SatisService.cs",
-              "RelativeDocumentMoniker": "StokTakip.Service\\Services\\SatisService.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Service\\Services\\SatisService.cs",
-              "RelativeToolTip": "StokTakip.Service\\Services\\SatisService.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAuwFIAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:36:59.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ISatisService.cs",
-              "DocumentMoniker": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\IServices\\ISatisService.cs",
-              "RelativeDocumentMoniker": "StokTakip.Core\\IServices\\ISatisService.cs",
-              "ToolTip": "C:\\Users\\MetinAlp\\.net\\StokTakipSistemi\\StokTakip.Core\\IServices\\ISatisService.cs",
-              "RelativeToolTip": "StokTakip.Core\\IServices\\ISatisService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:36:40.952Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

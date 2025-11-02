@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.DTOs;
+﻿using StokTakip.Core.DTOs;
+using StokTakip.Core.IRepositories;
 using StokTakip.Core.IServices;
-using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,99 +11,124 @@ namespace StokTakip.Service.Services
 {
     public class SatisService : ISatisService
     {
-        private readonly StokTakipDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IStokService _stokService; 
 
-        public SatisService(StokTakipDbContext context)
+        public SatisService(IUnitOfWork unitOfWork, IStokService stokService)
         {
-            _context = context;
-        }
-
-        public async Task<List<SatisDto>> GetAllAsync()
-        {
-            // SatisDto PascalCase kullandığı için PascalCase map'liyoruz
-            // Satis Entity ise camelCase
-            return await _context.SatisTable
-                .Include(s => s.Musteri)
-                .Include(s => s.Personel)
-                .Select(s => new SatisDto
-                {
-                    SatisID = s.satisID,
-                    UrunlerinAdiFiyati = s.urunlerinAdiFiyati,
-                    AraToplam = s.araToplam,
-                    VergiTutarlari = s.vergiTutarlari,
-                    ToplamTutar = s.toplamTutar,
-                    OdemeTipi = s.odemeTipi,
-                    IslemTarihi = s.islemTarihi,
-                    MusteriAdi = s.Musteri.musteriAdi, // Musteri entity'sinden
-                    PersonelAdi = s.Personel.personelAdi // Personel entity'sinden
-                }).ToListAsync();
-        }
-
-        public async Task<SatisDto> GetByIdAsync(int satisId)
-        {
-            var satis = await _context.SatisTable
-                .Include(s => s.Musteri)
-                .Include(s => s.Personel)
-                .FirstOrDefaultAsync(s => s.satisID == satisId);
-
-            if (satis == null) return null;
-
-            return new SatisDto
-            {
-                SatisID = satis.satisID,
-                UrunlerinAdiFiyati = satis.urunlerinAdiFiyati,
-                AraToplam = satis.araToplam,
-                VergiTutarlari = satis.vergiTutarlari,
-                ToplamTutar = satis.toplamTutar,
-                OdemeTipi = satis.odemeTipi,
-                IslemTarihi = satis.islemTarihi,
-                MusteriAdi = satis.Musteri.musteriAdi,
-                PersonelAdi = satis.Personel.personelAdi
-            };
-        }
-
-        public async Task<SatisDetayDto> GetDetayByIdAsync(int satisId)
-        {
-            var satis = await _context.SatisTable
-               .Include(s => s.Musteri)
-               .Include(s => s.Personel)
-               .FirstOrDefaultAsync(s => s.satisID == satisId);
-
-            if (satis == null) return null;
-
-            return new SatisDetayDto
-            {
-                SatisID = satis.satisID,
-                UrunlerinAdiFiyati = satis.urunlerinAdiFiyati,
-                AraToplam = satis.araToplam,
-                VergiTutarlari = satis.vergiTutarlari,
-                ToplamTutar = satis.toplamTutar,
-                OdemeTipi = satis.odemeTipi,
-                IslemTarihi = satis.islemTarihi,
-                MusteriDetay = new List<MusteriDto> { /* ... Manuel Map ... */ },
-                PersonelDetay = new List<PersonelDto> { /* ... Manuel Map ... */ }
-            };
+            _unitOfWork = unitOfWork;
+            _stokService = stokService;
         }
 
         public async Task<SatisDto> AddAsync(SatisEkleDto satisEkleDto)
         {
-            var satis = new Satis
+            await _unitOfWork.BeginTransactionAsync();
+            try
             {
-                // SatisEkleDto PascalCase
-                musteriID = satisEkleDto.MusteriID,
-                personelID = satisEkleDto.PersonelID,
-                urunlerinAdiFiyati = satisEkleDto.UrunlerinAdiFiyati,
-                araToplam = satisEkleDto.AraToplam,
-                vergiTutarlari = satisEkleDto.VergiTutarlari,
-                toplamTutar = satisEkleDto.ToplamTutar,
-                odemeTipi = satisEkleDto.OdemeTipi,
-                islemTarihi = DateTime.Now // DTO'da yok, sunucu atar
+                decimal hesaplananToplamTutar = 0;
+                var urunFiyatListesi = new Dictionary<int, decimal>();
+
+                foreach (var satilanUrun in satisEkleDto.SatilanUrunler)
+                {
+                    var stok = await _unitOfWork.Stoklar.SingleOrDefaultAsync(s => s.urunID == satilanUrun.UrunID);
+                    if (stok == null || stok.kalanStokMiktari < satilanUrun.Miktar)
+                    {
+                        throw new Exception($"Yetersiz stok: UrunID {satilanUrun.UrunID}");
+                    }
+
+                    var urun = await _unitOfWork.Urunler.GetByIdAsync(satilanUrun.UrunID);
+                    var fiyat = await _unitOfWork.Fiyatlar.GetByIdAsync(urun.fiyatID);
+
+                    decimal satisFiyati = fiyat.satisFiyati;
+                    urunFiyatListesi.Add(urun.urunID, satisFiyati); 
+                    hesaplananToplamTutar += satisFiyati * satilanUrun.Miktar;
+                }
+
+                var satis = new Satis
+                {
+                    musteriID = satisEkleDto.MusteriID,
+                    personelID = satisEkleDto.PersonelID,
+                    odemeTipi = satisEkleDto.OdemeTipi,
+                    islemTarihi = DateTime.Now,
+                    toplamTutar = hesaplananToplamTutar,
+                    araToplam = hesaplananToplamTutar, 
+                    vergiTutarlari = 0 
+                };
+
+                await _unitOfWork.Satislar.AddAsync(satis);
+                await _unitOfWork.SaveChangesAsync(); 
+
+                foreach (var satilanUrun in satisEkleDto.SatilanUrunler)
+                {
+                    var satisDetay = new SatisDetay
+                    {
+                        satisID = satis.satisID,
+                        urunID = satilanUrun.UrunID,
+                        Miktar = satilanUrun.Miktar,
+                        SatisFiyati = urunFiyatListesi[satilanUrun.UrunID] 
+                    };
+                    await _unitOfWork.SatisDetaylar.AddAsync(satisDetay);
+
+                    await _stokService.StokAzalt(satilanUrun.UrunID, satilanUrun.Miktar);
+                }
+
+                await _unitOfWork.SaveChangesAsync();
+
+                await _unitOfWork.CommitAsync();
+
+                return await GetByIdAsync(satis.satisID); 
+            }
+            catch (Exception ex)
+            {
+                await _unitOfWork.RollbackAsync();
+                throw; 
+            }
+        }
+
+      
+
+        public async Task<SatisDetayDto> GetDetayByIdAsync(int satisId)
+        {
+            var satis = await _unitOfWork.Satislar.GetSatisDetayByIdAsync(satisId);
+            if (satis == null) return null;
+
+            var personel = await _unitOfWork.Personeller.GetByIdAsync(satis.personelID);
+            var musteri = await _unitOfWork.Musteriler.GetByIdAsync(satis.musteriID);
+            var satisDetaylari = await _unitOfWork.SatisDetaylar.FindAsync(sd => sd.satisID == satisId);
+            var urunDetaylari = new List<SatisUrunDetayDto>();
+
+            foreach (var detay in satisDetaylari)
+            {
+                var urun = await _unitOfWork.Urunler.GetByIdAsync(detay.urunID);
+                urunDetaylari.Add(new SatisUrunDetayDto
+                {
+                    UrunID = urun.urunID,
+                    UrunAdi = urun.urunAdi,
+                    Miktar = detay.Miktar,
+                    SatisFiyati = detay.SatisFiyati
+                });
+            }
+
+            return new SatisDetayDto
+            {
+                SatisID = satis.satisID,
+                ToplamTutar = satis.toplamTutar,
+                OdemeTipi = satis.odemeTipi,
+                IslemTarihi = satis.islemTarihi,
+                PersonelDetay = new PersonelDto {  },
+                MusteriDetay = new MusteriDto {  },
+                SatilanUrunler = urunDetaylari
             };
+        }
 
-            _context.SatisTable.Add(satis);
-            await _context.SaveChangesAsync();
+        public async Task<List<SatisDto>> GetAllAsync()
+        {
+            return new List<SatisDto>(); 
+        }
 
-            return await GetByIdAsync(satis.satisID);
+        public async Task<SatisDto> GetByIdAsync(int satisId)
+        {
+            return new SatisDto(); 
         }
     }
 }

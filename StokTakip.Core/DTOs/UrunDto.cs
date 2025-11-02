@@ -19,8 +19,6 @@ namespace StokTakip.Core.DTOs
         public int kategoriID { get; set; }
         public int tedarikciID { get; set; }
         public int fiyatID { get; set; }
-        public int stokID { get; set; }
-        public int satisID { get; set; }
     }
 }
 
@@ -43,12 +41,14 @@ namespace StokTakip.Core.DTOs
         public int kategoriID { get; set; }
         [Required]
         public int tedarikciID { get; set; }
+
         [Required]
-        public int fiyatID { get; set; }
+        public decimal AlisFiyati { get; set; }
         [Required]
-        public int stokID { get; set; }
+        public decimal SatisFiyati { get; set; }
+
         [Required]
-        public int satisID { get; set; }
+        public int ToplamStokMiktari { get; set; }
     }
 }
 
@@ -73,12 +73,6 @@ namespace StokTakip.Core.DTOs
         public int kategoriID { get; set; }
         [Required]
         public int tedarikciID { get; set; }
-        [Required]
-        public int fiyatID { get; set; }
-        [Required]
-        public int stokID { get; set; }
-        [Required]
-        public int satisID { get; set; }
     }
 }
 
@@ -93,16 +87,11 @@ namespace StokTakip.Core.DTOs
         public DateTime alisTarihi { get; set; }
         public DateTime sonTuketimTarihi { get; set; }
 
-        public int kategoriID { get; set; }
-        public int tedarikciID { get; set; }
-        public int fiyatID { get; set; }
-        public int stokID { get; set; }
-        public int satisID { get; set; }
-
-        public KategoriDto Kategori { get; set; } 
-        public TedarikciDto Tedarikci { get; set; } 
+        public KategoriDto Kategori { get; set; }
+        public TedarikciDto Tedarikci { get; set; }
         public FiyatDto Fiyat { get; set; }
         public StokDto Stok { get; set; }
-        public SatisDto Satis { get; set; }
+
+        public List<SatisUrunDetayDto> SatisGecmisi { get; set; }
     }
 }

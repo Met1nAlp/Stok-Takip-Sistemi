@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.DTOs;
+﻿using StokTakip.Core.DTOs;
+using StokTakip.Core.IRepositories;
 using StokTakip.Core.IServices;
-using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,15 +12,16 @@ namespace StokTakip.Service.Services
 {
     public class MusteriService : IMusteriService
     {
-        private readonly StokTakipDbContext _context;
-        public MusteriService(StokTakipDbContext context)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public MusteriService(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<List<MusteriDto>> GetAllMusterilerAsync()
         {
-            var musteri = await _context.MusteriTable.ToListAsync();
+            var musteri = await _unitOfWork.Musteriler.GetAllAsync();
 
             if (musteri == null)
             {
@@ -35,14 +35,12 @@ namespace StokTakip.Service.Services
                 musteriNo = k.musteriNo,
                 iletisim = k.iletisim,
                 kayitTarihi = k.kayitTarihi
-
             }).ToList();
-
         }
 
         public async Task<MusteriDto> GetMusteriByIdAsync(int musteriID)
         {
-            var musteri = await _context.MusteriTable.FindAsync(musteriID);
+            var musteri = await _unitOfWork.Musteriler.GetByIdAsync(musteriID);
 
             if (musteri == null)
             {
@@ -69,11 +67,12 @@ namespace StokTakip.Service.Services
                 kayitTarihi = DateTime.Now,
             };
 
-            _context.MusteriTable.Add(musteri);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Musteriler.AddAsync(musteri);
+            await _unitOfWork.SaveChangesAsync();
 
             return new MusteriDto
             {
+                musteriID = musteri.musteriID,
                 musteriAdi = musteri.musteriAdi,
                 musteriNo = musteri.musteriNo,
                 iletisim = musteri.iletisim,
@@ -82,7 +81,7 @@ namespace StokTakip.Service.Services
         }
         public async Task<MusteriDto> UpdateMusteriAsync(int musteriID, MusteriGuncelleDto musteriGuncelleDto)
         {
-            var musteri = _context.MusteriTable.Find(musteriID);
+            var musteri = await _unitOfWork.Musteriler.GetByIdAsync(musteriID);
 
             if (musteri == null)
             {
@@ -93,35 +92,31 @@ namespace StokTakip.Service.Services
             musteri.musteriNo = musteriGuncelleDto.musteriNo;
             musteri.iletisim = musteriGuncelleDto.iletisim;
 
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Musteriler.UpdateAsync(musteri);
+            await _unitOfWork.SaveChangesAsync();
+
             return new MusteriDto
             {
+                musteriID = musteri.musteriID,
                 musteriAdi = musteri.musteriAdi,
                 musteriNo = musteri.musteriNo,
                 iletisim = musteri.iletisim,
                 kayitTarihi = musteri.kayitTarihi
             };
-
         }
 
         public async Task<bool> DeleteMusteriAsync(int musteriID)
         {
-            var musteri = await _context.MusteriTable.FindAsync(musteriID);
+            var musteri = await _unitOfWork.Musteriler.GetByIdAsync(musteriID);
 
             if (musteri == null)
             {
                 return false;
             }
 
-            _context.MusteriTable.Remove(musteri);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Musteriler.DeleteAsync(musteri);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
-
-
-
-
-
-
     }
 }

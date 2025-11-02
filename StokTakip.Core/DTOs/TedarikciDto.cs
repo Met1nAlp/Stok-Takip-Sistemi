@@ -38,6 +38,8 @@ namespace StokTakip.Core.DTOs
     public class TedarikciGuncelleDto
     {
         [Required]
+        public int tedarikciID { get; set; }
+        [Required]
         public string tedarikciAdi { get; set; }
         [Required]
         public string yetkili { get; set; }

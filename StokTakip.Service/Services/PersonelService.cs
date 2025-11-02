@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.DTOs;
+﻿using StokTakip.Core.DTOs;
+using StokTakip.Core.IRepositories;
 using StokTakip.Core.IServices;
-using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,32 +10,33 @@ namespace StokTakip.Service.Services
 {
     public class PersonelService : IPersonelService
     {
-        private readonly StokTakipDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public PersonelService(StokTakipDbContext context)
+        public PersonelService(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<List<PersonelDto>> GetAllAsync()
         {
-            return await _context.PersonelTable
-                .Select(p => new PersonelDto
-                {
-                    personelID = p.personelID,
-                    personelAdi = p.personelAdi,
-                    personelNo = p.personelNo,
-                    unvani = p.unvani,
-                    iletisim = p.iletisim,
-                    iseBaslmaTarihi = p.iseBaslmaTarihi,
-                    calismaGunleri = p.calismaGunleri,
-                    mesaisi = p.mesaisi
-                }).ToListAsync();
+            var personeller = await _unitOfWork.Personeller.GetAllAsync();
+
+            return personeller.Select(p => new PersonelDto
+            {
+                personelID = p.personelID,
+                personelAdi = p.personelAdi,
+                personelNo = p.personelNo,
+                unvani = p.unvani,
+                iletisim = p.iletisim,
+                iseBaslmaTarihi = p.iseBaslmaTarihi,
+                calismaGunleri = p.calismaGunleri,
+                mesaisi = p.mesaisi
+            }).ToList();
         }
 
         public async Task<PersonelDto> GetByIdAsync(int personelId)
         {
-            var personel = await _context.PersonelTable.FindAsync(personelId);
+            var personel = await _unitOfWork.Personeller.GetByIdAsync(personelId);
             if (personel == null) return null;
 
             return new PersonelDto
@@ -54,9 +54,7 @@ namespace StokTakip.Service.Services
 
         public async Task<PersonelDetayDto> GetDetayByIdAsync(int personelId)
         {
-            var personel = await _context.PersonelTable
-                                .Include(p => p.SatisTable) 
-                                .FirstOrDefaultAsync(p => p.personelID == personelId);
+            var personel = await _unitOfWork.Personeller.GetPersonelByIdAsync(personelId);
 
             if (personel == null) return null;
 
@@ -93,15 +91,15 @@ namespace StokTakip.Service.Services
                 mesaisi = personelEkleDto.mesaisi
             };
 
-            _context.PersonelTable.Add(personel);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Personeller.AddAsync(personel);
+            await _unitOfWork.SaveChangesAsync();
 
             return await GetByIdAsync(personel.personelID);
         }
 
         public async Task<PersonelDto> UpdateAsync(int personelId, PersonelGuncelleDto personelGuncelleDto)
         {
-            var personel = await _context.PersonelTable.FindAsync(personelId);
+            var personel = await _unitOfWork.Personeller.GetByIdAsync(personelId);
             if (personel == null) return null;
 
             personel.personelAdi = personelGuncelleDto.personelAdi;
@@ -112,17 +110,18 @@ namespace StokTakip.Service.Services
             personel.calismaGunleri = personelGuncelleDto.calismaGunleri;
             personel.mesaisi = personelGuncelleDto.mesaisi;
 
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Personeller.UpdateAsync(personel);
+            await _unitOfWork.SaveChangesAsync();
             return await GetByIdAsync(personel.personelID);
         }
 
         public async Task<bool> DeleteAsync(int personelId)
         {
-            var personel = await _context.PersonelTable.FindAsync(personelId);
+            var personel = await _unitOfWork.Personeller.GetByIdAsync(personelId);
             if (personel == null) return false;
 
-            _context.PersonelTable.Remove(personel);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Personeller.DeleteAsync(personel);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
     }

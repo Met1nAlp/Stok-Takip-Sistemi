@@ -10,5 +10,6 @@ namespace StokTakip.Core.IServices
         Task<StokDto> AddAsync(StokEkleDto stokEkleDto);
         Task<StokDto> UpdateAsync(int stokId, StokGuncelleDto stokGuncelleDto);
         Task<bool> DeleteAsync(int stokId);
+        Task StokAzalt(int urunId, int satilanMiktar);
     }
 }

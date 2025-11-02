@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StokTakip.Core.DTOs;
+﻿using StokTakip.Core.DTOs;
+using StokTakip.Core.IRepositories;
 using StokTakip.Core.IServices;
-using StokTakip.Data.Context;
 using StokTakip.Entity.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,16 +12,16 @@ namespace StokTakip.Service.Services
 {
     public class KategoriService : IKategoriService
     {
-        private readonly StokTakipDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public KategoriService(StokTakipDbContext context)
+        public KategoriService(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
-        public async     Task<List<KategoriDto>> GetAllCategoriesAsync()
+        public async Task<List<KategoriDto>> GetAllCategoriesAsync()
         {
-            var kategori = await _context.KategoriTable.ToListAsync();
+            var kategori = await _unitOfWork.Kategoriler.GetAllAsync();
 
             return kategori.Select(k => new KategoriDto
             {
@@ -30,12 +29,11 @@ namespace StokTakip.Service.Services
                 KategoriAdi = k.kategoriAdi,
                 Yeri = k.yeri
             }).ToList();
-
         }
 
         public async Task<KategoriDto> GetCategoryByIdAsync(int kategoriID)
         {
-            var kategori = await _context.KategoriTable.FindAsync(kategoriID);
+            var kategori = await _unitOfWork.Kategoriler.GetByIdAsync(kategoriID);
 
             if (kategori == null)
             {
@@ -56,10 +54,12 @@ namespace StokTakip.Service.Services
                 kategoriAdi = kategoriEkleDto.KategoriAdi,
                 yeri = kategoriEkleDto.Yeri
             };
-            _context.KategoriTable.Add(kategori);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Kategoriler.AddAsync(kategori);
+            await _unitOfWork.SaveChangesAsync();
+
             return new KategoriDto
             {
+                KategoriID = kategori.kategoriID,
                 KategoriAdi = kategori.kategoriAdi,
                 Yeri = kategori.yeri
             };
@@ -67,14 +67,17 @@ namespace StokTakip.Service.Services
 
         public async Task<KategoriDto> UpdateCategoryAsync(int kategoriId, KategoriGuncelleDto kategoriGuncelleDto)
         {
-            var kategori = await _context.KategoriTable.FindAsync(kategoriId);
+            var kategori = await _unitOfWork.Kategoriler.GetByIdAsync(kategoriId);
             if (kategori == null)
             {
                 return null;
             }
             kategori.kategoriAdi = kategoriGuncelleDto.KategoriAdi;
             kategori.yeri = kategoriGuncelleDto.Yeri;
-            await _context.SaveChangesAsync();
+
+            await _unitOfWork.Kategoriler.UpdateAsync(kategori);
+            await _unitOfWork.SaveChangesAsync();
+
             return new KategoriDto
             {
                 KategoriID = kategori.kategoriID,
@@ -85,20 +88,14 @@ namespace StokTakip.Service.Services
 
         public async Task<bool> DeleteCategoryAsync(int kategoriID)
         {
-            var kategori = await _context.KategoriTable.FindAsync(kategoriID);
+            var kategori = await _unitOfWork.Kategoriler.GetByIdAsync(kategoriID);
             if (kategori == null)
             {
                 return false;
             }
-            _context.KategoriTable.Remove(kategori);
-            await _context.SaveChangesAsync();
+            await _unitOfWork.Kategoriler.DeleteAsync(kategori);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
-
-        
-
-        
-
-        
     }
 }
